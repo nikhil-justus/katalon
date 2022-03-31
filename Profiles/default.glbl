@@ -24,4 +24,14 @@
       <initValue>5</initValue>
       <name>G_ShortTimeOut</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://paywellauthfe.shopups1.xyz'</initValue>
+      <name>paywellBaseUrl</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>PAYWELL_COOKIE</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

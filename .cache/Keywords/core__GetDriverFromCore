@@ -1,0 +1,21 @@
+{
+  "keywordFileContentHash": "85F7CD0561490569C3BE30D05CC360F2",
+  "keywordClasses": [
+    {
+      "name": "core.GetDriverFromCore",
+      "keywordMethods": [
+        {
+          "name": "getMobileDriver",
+          "parameters": [],
+          "javadoc": "/**\n\t * Get mobile driver for current session\n\t * @return mobile driver for current session\n\t */"
+        },
+        {
+          "name": "setAndroidCapabilities",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
