@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "176CAB25EBF3386C67621D5B2A522954",
+  "keywordFileContentHash": "86AC85F5B8F145807E3ECF5CBB5424BE",
   "keywordClasses": [
     {
       "name": "core.CoreFileUtils",
@@ -33,7 +33,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Read excel file\n\t * @param path Excel File Path\n\t * @param sheetName excel sheet for usage\n\t * @return Hashmap [String,List\u003cObject\u003e] with header as key and rows as list\n\t */"
         },
         {
           "name": "readExcelWithEachRowAsList",
@@ -64,7 +65,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Read excel file\n\t * @param path Excel File Path\n\t * @param sheetName excel sheet for usage\n\t * @return Hashmap [String,List\u003cObject\u003e] with each row as List\n\t */"
         },
         {
           "name": "getStaticJsonData",
@@ -82,7 +84,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Parse json file and return as a json object for validation \n\t * @param json file path\n\t * @return json object\n\t */"
         },
         {
           "name": "parseResponseToMap",
@@ -100,10 +103,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Parse the json response and return as a map of the response\n\t * @param ResponseObject from API call\n\t * @return HashMap\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

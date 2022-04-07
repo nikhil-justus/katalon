@@ -12,6 +12,16 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
+    public static Object timeOut
+     
+    /**
+     * <p></p>
+     */
+    public static Object testDataSet
+     
+    /**
+     * <p></p>
+     */
     public static Object G_Timeout
      
     /**
@@ -42,7 +52,7 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-    public static Object timeOut
+    public static Object valueg
      
 
     static {
@@ -51,13 +61,15 @@ public class GlobalVariable {
 			selectedVariables += TestCaseMain.getGlobalVariables(RunConfiguration.getExecutionProfile())
             selectedVariables += TestCaseMain.getParsedValues(RunConfiguration.getOverridingParameters())
     
+            timeOut = selectedVariables['timeOut']
+            testDataSet = selectedVariables['testDataSet']
             G_Timeout = selectedVariables['G_Timeout']
             G_NotificationMessage = selectedVariables['G_NotificationMessage']
             G_AndroidApp = selectedVariables['G_AndroidApp']
             G_ShortTimeOut = selectedVariables['G_ShortTimeOut']
             paywellBaseUrl = selectedVariables['paywellBaseUrl']
             PAYWELL_COOKIE = selectedVariables['PAYWELL_COOKIE']
-            timeOut = selectedVariables['timeOut']
+            valueg = selectedVariables['valueg']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

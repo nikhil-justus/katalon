@@ -1,18 +1,71 @@
 {
-  "keywordFileContentHash": "85F7CD0561490569C3BE30D05CC360F2",
+  "keywordFileContentHash": "2631A4F3F35F5ED100A23DD4C97B59BA",
   "keywordClasses": [
     {
       "name": "core.GetDriverFromCore",
       "keywordMethods": [
+        {
+          "name": "setWebDriverCapabilities",
+          "parameters": [],
+          "javadoc": "/**\n\t * Set web driver capabilities before start of session\n\t * @return web driver desired capabilities for current session\n\t */"
+        },
+        {
+          "name": "startWebDriver",
+          "parameters": [],
+          "javadoc": "/**\n\t * Set web driver capabilities and start a driver\n\t * @return web driver\n\t */"
+        },
+        {
+          "name": "getWebDriverInstance",
+          "parameters": [],
+          "javadoc": "/**\n\t * Get mobile driver for current session\n\t * @return mobile driver for current session\n\t */"
+        },
+        {
+          "name": "setAndroidCapabilities",
+          "parameters": [
+            {
+              "name": "appId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\n\t * Set mobile driver capabilities before start of session\n\t */"
+        },
         {
           "name": "getMobileDriver",
           "parameters": [],
           "javadoc": "/**\n\t * Get mobile driver for current session\n\t * @return mobile driver for current session\n\t */"
         },
         {
-          "name": "setAndroidCapabilities",
+          "name": "startAppDriver",
+          "parameters": [
+            {
+              "name": "appId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\n\t * Start mobile driver \n\t * Accepts the custom Id of the app uploaded in Lambda Test\n\t */"
+        },
+        {
+          "name": "stopAppDriver",
           "parameters": [],
-          "javadoc": ""
+          "javadoc": "/**\n\t * Stop the current mobile driver session\n\t */"
         }
       ]
     }

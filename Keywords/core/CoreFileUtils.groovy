@@ -50,27 +50,51 @@ public class CoreFileUtils {
 		return map
 	}
 
-	
+	/**
+	 * Read excel file
+	 * @param path Excel File Path
+	 * @param sheetName excel sheet for usage
+	 * @return Hashmap [String,List<Object>] with each row as List
+	 */
 	@Keyword
 	def readExcelWithEachRowAsList(String path, String sheetName) {
 		String filePath = RunConfiguration.getProjectDir() + path
 		Object excelData = ExcelFactory.getExcelDataWithDefaultSheet(filePath, sheetName, true)
 
 		List<List<Object>>data = excelData.getAllData()
-		println data
-		int rowNumbers = excelData.getRowNumbers()
-		println rowNumbers
+		int columnNumbers = excelData.getColumnNumbers()
 		String[] headers = excelData.getColumnNames()
-		println headers
-		
-//		ArrayList<HashMap<String, Object>> arr = new ArrayList()
-//		for(line in data) {
-//			HashMap<String, Object> map = new HashMap()
-//			
-//		}
-		
+
+		ArrayList<HashMap<String, Object>> arr = new ArrayList()
+		for(line in data) {
+			HashMap<String, Object> map = new HashMap();
+			for (int i=0; i<columnNumbers; i++) {
+				String value = line[i]
+				Object parsedValue;
+				if (value == null) {
+					continue
+				}
+				else if (value.isInteger()) {
+					parsedValue = Integer.parseInt(value)
+				}
+				else if (value.isDouble()) {
+					parsedValue = Double.parseDouble(value)
+				}
+				else {
+					parsedValue = value
+				}
+				map.put(headers[i], parsedValue)
+			}
+			arr.add(map)
+		}
+		return arr
 	}
-	
+
+	/**
+	 * Parse json file and return as a json object for validation 
+	 * @param json file path
+	 * @return json object
+	 */
 	@Keyword
 	def Object getStaticJsonData(String fileName) {
 		def jsonSlurper = new JsonSlurper()
@@ -78,6 +102,11 @@ public class CoreFileUtils {
 		return data;
 	}
 
+	/**
+	 * Parse the json response and return as a map of the response
+	 * @param ResponseObject from API call
+	 * @return HashMap
+	 */
 	@Keyword
 	def HashMap<String,Object> parseResponseToMap(ResponseObject response) {
 		def jsonSlurper = new JsonSlurper()

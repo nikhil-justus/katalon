@@ -1,10 +1,13 @@
 package core
 
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.remote.DesiredCapabilities
 
 import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.mobile.driver.MobileDriverType
 import com.kms.katalon.core.mobile.helper.MobileElementCommonHelper
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 
@@ -40,12 +43,22 @@ public class AppUtils {
 	}
 
 	@Keyword
-	def start() {
-		Mobile.startApplication('lambda123456', true)
-	}
+	def setAndroidCapabilities(String appId) {
+		DesiredCapabilities desiredCapabilities = DesiredCapabilities.android()
+		desiredCapabilities.setCapability('visual', true)
+		desiredCapabilities.setCapability('isRealMobile', true)
+		desiredCapabilities.setCapability('platformVersion', '10')
+		desiredCapabilities.setCapability('platformName', 'Android')
+		desiredCapabilities.setCapability('build', 'CDSApp')
+		desiredCapabilities.setCapability('name', 'CDSAppRun')
+		desiredCapabilities.setCapability('video', true)
+		desiredCapabilities.setCapability('network', true)
+		desiredCapabilities.setCapability('console', true)
+		desiredCapabilities.setCapability('deviceName', 'Galaxy S10')
+		desiredCapabilities.setCapability('appWaitActivity', '*')
+		desiredCapabilities.setCapability('user', 'tech-automation')
+		desiredCapabilities.setCapability('accessKey', '2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr')
 
-	@Keyword
-	def stop() {
-		Mobile.closeApplication()
+		MobileDriverFactory.startRemoteMobileDriver('https://tech-automation:2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr@beta-hub.lambdatest.com/wd/hub', desiredCapabilities, MobileDriverType.ANDROID_DRIVER, 'lambda123456')
 	}
 }

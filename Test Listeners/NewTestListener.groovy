@@ -5,19 +5,27 @@ import com.kms.katalon.core.annotation.BeforeTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 
+import internal.GlobalVariable
+
 class NewTestListener {
 	/**
 	 * Executes before every test case starts.
 	 * @param testCaseContext related information of the executed test case.
 	 */
 	@BeforeTestCase
-	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
-		println "sampleBeforeTestCase"
-		println testCaseContext.getTestCaseId()
-		println testCaseContext.getTestCaseVariables()
-		if ((testCaseContext.getTestCaseId()) == "Test Cases/API/Paywell/KeyWordTests/C")
-			{	testCaseContext.skipThisTestCase()
+	def sampleBeforeTestCase(TestCaseContext testCaseContext) {	
+		ArrayList<HashMap<String, Object>> arr = CustomKeywords.'core.CoreFileUtils.readExcelWithEachRowAsList'("/Data Files/keyword.xlsx", "Sheet1")
+		for (map in arr) {
+			String testCaseId = "Test Cases/"+map.Module+"/"+map.App+"/"+map.Service+"/"+map.TestCase
+			if (testCaseContext.getTestCaseId() == (testCaseId)) {
+				if (map.Execution == 'N') {
+					println "The test case has been skipped"
+					testCaseContext.skipThisTestCase()
+				}
+				CustomKeywords.'core.Helper.addGlobalVariable'('testDataSet', map.TestData)
 			}
+			
+		}
 	}
 
 	/**
@@ -26,9 +34,6 @@ class NewTestListener {
 	 */
 	@AfterTestCase
 	def sampleAfterTestCase(TestCaseContext testCaseContext) {
-		println "sampleAfterTestCase"
-		println testCaseContext.getTestCaseId()
-		println testCaseContext.getTestCaseStatus()
 	}
 
 	/**
@@ -37,8 +42,7 @@ class NewTestListener {
 	 */
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
-		println "sampleBeforeTestSuite"
-		println testSuiteContext.getTestSuiteId()
+		testSuiteContext.getTestSuiteId()
 	}
 
 	/**
@@ -47,7 +51,5 @@ class NewTestListener {
 	 */
 	@AfterTestSuite
 	def sampleAfterTestSuite(TestSuiteContext testSuiteContext) {
-		println "sampleAfterTestSuite"
-		println testSuiteContext.getTestSuiteId()
 	}
 }

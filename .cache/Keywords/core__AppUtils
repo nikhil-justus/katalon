@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "61669C5F4D1249C16768810F22EEF5AB",
+  "keywordFileContentHash": "2027B9C67C3ED5C3CDFC6D81CA87D362",
   "keywordClasses": [
     {
       "name": "core.AppUtils",
@@ -56,13 +56,22 @@
           "javadoc": "/**\n\t * Check if element present in timeout\n\t * @param to Katalon test object\n\t * @param timeout time to wait for element to show up\n\t * @return true if element present, otherwise false\n\t */"
         },
         {
-          "name": "start",
-          "parameters": [],
-          "javadoc": ""
-        },
-        {
-          "name": "stop",
-          "parameters": [],
+          "name": "setAndroidCapabilities",
+          "parameters": [
+            {
+              "name": "appId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
           "javadoc": ""
         }
       ]

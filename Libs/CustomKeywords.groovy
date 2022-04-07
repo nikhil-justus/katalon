@@ -9,6 +9,12 @@ import java.lang.String
 
 import com.kms.katalon.core.testobject.ResponseObject
 
+import com.applitools.eyes.selenium.Eyes
+
+import org.openqa.selenium.WebElement
+
+import com.applitools.eyes.RectangleSize
+
 
 
 def static "core.AppUtils.waitForElement"(
@@ -32,13 +38,43 @@ def static "core.AppUtils.isElementPresent_Mobile"(
 }
 
 
-def static "core.AppUtils.start"() {
-    (new core.AppUtils()).start()
+def static "core.AppUtils.setAndroidCapabilities"(
+    	String appId	) {
+    (new core.AppUtils()).setAndroidCapabilities(
+        	appId)
 }
 
+ /**
+	 * Set web driver capabilities before start of session
+	 * @return web driver desired capabilities for current session
+	 */ 
+def static "core.GetDriverFromCore.setWebDriverCapabilities"() {
+    (new core.GetDriverFromCore()).setWebDriverCapabilities()
+}
 
-def static "core.AppUtils.stop"() {
-    (new core.AppUtils()).stop()
+ /**
+	 * Set web driver capabilities and start a driver
+	 * @return web driver
+	 */ 
+def static "core.GetDriverFromCore.startWebDriver"() {
+    (new core.GetDriverFromCore()).startWebDriver()
+}
+
+ /**
+	 * Get mobile driver for current session
+	 * @return mobile driver for current session
+	 */ 
+def static "core.GetDriverFromCore.getWebDriverInstance"() {
+    (new core.GetDriverFromCore()).getWebDriverInstance()
+}
+
+ /**
+	 * Set mobile driver capabilities before start of session
+	 */ 
+def static "core.GetDriverFromCore.setAndroidCapabilities"(
+    	String appId	) {
+    (new core.GetDriverFromCore()).setAndroidCapabilities(
+        	appId)
 }
 
  /**
@@ -49,12 +85,38 @@ def static "core.GetDriverFromCore.getMobileDriver"() {
     (new core.GetDriverFromCore()).getMobileDriver()
 }
 
+ /**
+	 * Start mobile driver 
+	 * Accepts the custom Id of the app uploaded in Lambda Test
+	 */ 
+def static "core.GetDriverFromCore.startAppDriver"(
+    	String appId	) {
+    (new core.GetDriverFromCore()).startAppDriver(
+        	appId)
+}
 
-def static "core.GetDriverFromCore.setAndroidCapabilities"() {
-    (new core.GetDriverFromCore()).setAndroidCapabilities()
+ /**
+	 * Stop the current mobile driver session
+	 */ 
+def static "core.GetDriverFromCore.stopAppDriver"() {
+    (new core.GetDriverFromCore()).stopAppDriver()
 }
 
 
+def static "core.Helper.addGlobalVariable"(
+    	String name	
+     , 	Object value	) {
+    (new core.Helper()).addGlobalVariable(
+        	name
+         , 	value)
+}
+
+ /**
+	 * Read excel file
+	 * @param path Excel File Path
+	 * @param sheetName excel sheet for usage
+	 * @return Hashmap [String,List<Object>] with header as key and rows as list
+	 */ 
 def static "core.CoreFileUtils.readExcel"(
     	String path	
      , 	String sheetName	) {
@@ -63,7 +125,12 @@ def static "core.CoreFileUtils.readExcel"(
          , 	sheetName)
 }
 
-
+ /**
+	 * Read excel file
+	 * @param path Excel File Path
+	 * @param sheetName excel sheet for usage
+	 * @return Hashmap [String,List<Object>] with each row as List
+	 */ 
 def static "core.CoreFileUtils.readExcelWithEachRowAsList"(
     	String path	
      , 	String sheetName	) {
@@ -72,14 +139,22 @@ def static "core.CoreFileUtils.readExcelWithEachRowAsList"(
          , 	sheetName)
 }
 
-
+ /**
+	 * Parse json file and return as a json object for validation 
+	 * @param json file path
+	 * @return json object
+	 */ 
 def static "core.CoreFileUtils.getStaticJsonData"(
     	String fileName	) {
     (new core.CoreFileUtils()).getStaticJsonData(
         	fileName)
 }
 
-
+ /**
+	 * Parse the json response and return as a map of the response
+	 * @param ResponseObject from API call
+	 * @return HashMap
+	 */ 
 def static "core.CoreFileUtils.parseResponseToMap"(
     	ResponseObject response	) {
     (new core.CoreFileUtils()).parseResponseToMap(
@@ -125,41 +200,58 @@ def static "api.paywell.Login.login"(
 }
 
 
-def static "com.kms.katalon.keyword.draganddrop.DragAndDropKeywords.dragAndDrop"(
-    	TestObject sourceObject	
-     , 	TestObject destinationObject	) {
-    (new com.kms.katalon.keyword.draganddrop.DragAndDropKeywords()).dragAndDrop(
-        	sourceObject
-         , 	destinationObject)
+def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkElement"(
+    	Eyes eyes	
+     , 	WebElement element	) {
+    (new com.kms.katalon.keyword.applitools.BasicKeywords()).checkElement(
+        	eyes
+         , 	element)
 }
 
 
-def static "com.kms.katalon.keyword.draganddrop.DragAndDropKeywords.dragAndDropBy"(
-    	TestObject sourceObject	
-     , 	TestObject destinationObject	
-     , 	int xOffset	
-     , 	int yOffset	) {
-    (new com.kms.katalon.keyword.draganddrop.DragAndDropKeywords()).dragAndDropBy(
-        	sourceObject
-         , 	destinationObject
-         , 	xOffset
-         , 	yOffset)
+def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkWindow"(
+    	String testName	) {
+    (new com.kms.katalon.keyword.applitools.BasicKeywords()).checkWindow(
+        	testName)
 }
 
 
-def static "com.kms.katalon.keyword.draganddrop.DragAndDropKeywords.dragAndDropJquery"(
-    	TestObject sourceObject	
-     , 	TestObject destinationObject	) {
-    (new com.kms.katalon.keyword.draganddrop.DragAndDropKeywords()).dragAndDropJquery(
-        	sourceObject
-         , 	destinationObject)
+def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkTestObject"(
+    	TestObject testObject	
+     , 	String testName	) {
+    (new com.kms.katalon.keyword.applitools.BasicKeywords()).checkTestObject(
+        	testObject
+         , 	testName)
 }
 
 
-def static "com.kms.katalon.keyword.draganddrop.DragAndDropKeywords.dragAndDropHtml5"(
-    	TestObject sourceObject	
-     , 	TestObject destinationObject	) {
-    (new com.kms.katalon.keyword.draganddrop.DragAndDropKeywords()).dragAndDropHtml5(
-        	sourceObject
-         , 	destinationObject)
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpen"(
+    	String testName	
+     , 	RectangleSize viewportSize	) {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesOpen(
+        	testName
+         , 	viewportSize)
+}
+
+
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
+}
+
+
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpenWithBaseline"(
+    	String baselineName	
+     , 	String testName	
+     , 	RectangleSize viewportSize	) {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesOpenWithBaseline(
+        	baselineName
+         , 	testName
+         , 	viewportSize)
+}
+
+
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesClose"(
+    	Eyes eyes	) {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesClose(
+        	eyes)
 }
