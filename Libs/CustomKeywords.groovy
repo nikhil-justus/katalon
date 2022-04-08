@@ -3,11 +3,11 @@
  * This class is generated automatically by Katalon Studio and should not be modified or deleted.
  */
 
-import com.kms.katalon.core.testobject.TestObject
-
 import java.lang.String
 
 import com.kms.katalon.core.testobject.ResponseObject
+
+import com.kms.katalon.core.testobject.TestObject
 
 import com.applitools.eyes.selenium.Eyes
 
@@ -15,34 +15,6 @@ import org.openqa.selenium.WebElement
 
 import com.applitools.eyes.RectangleSize
 
-
-
-def static "core.AppUtils.waitForElement"(
-    	TestObject object	) {
-    (new core.AppUtils()).waitForElement(
-        	object)
-}
-
- /**
-	 * Check if element present in timeout
-	 * @param to Katalon test object
-	 * @param timeout time to wait for element to show up
-	 * @return true if element present, otherwise false
-	 */ 
-def static "core.AppUtils.isElementPresent_Mobile"(
-    	TestObject to	
-     , 	int timeout	) {
-    (new core.AppUtils()).isElementPresent_Mobile(
-        	to
-         , 	timeout)
-}
-
-
-def static "core.AppUtils.setAndroidCapabilities"(
-    	String appId	) {
-    (new core.AppUtils()).setAndroidCapabilities(
-        	appId)
-}
 
  /**
 	 * Set web driver capabilities before start of session
@@ -69,12 +41,17 @@ def static "core.GetDriverFromCore.getWebDriverInstance"() {
 }
 
  /**
+	 * Stop the current mobile driver session
+	 */ 
+def static "core.GetDriverFromCore.stopWebDriver"() {
+    (new core.GetDriverFromCore()).stopWebDriver()
+}
+
+ /**
 	 * Set mobile driver capabilities before start of session
 	 */ 
-def static "core.GetDriverFromCore.setAndroidCapabilities"(
-    	String appId	) {
-    (new core.GetDriverFromCore()).setAndroidCapabilities(
-        	appId)
+def static "core.GetDriverFromCore.setAndroidCapabilities"() {
+    (new core.GetDriverFromCore()).setAndroidCapabilities()
 }
 
  /**
@@ -181,6 +158,34 @@ def static "app.cds.LoginPage.inputLoginNumber"(
 
 def static "app.cds.LoginPage.clickSendSMSButton"() {
     (new app.cds.LoginPage()).clickSendSMSButton()
+}
+
+
+def static "core.AppBaseClass.waitForElement"(
+    	TestObject object	) {
+    (new core.AppBaseClass()).waitForElement(
+        	object)
+}
+
+ /**
+	 * Check if element present in timeout
+	 * @param to Katalon test object
+	 * @param timeout time to wait for element to show up
+	 * @return true if element present, otherwise false
+	 */ 
+def static "core.AppBaseClass.isElementPresent_Mobile"(
+    	TestObject to	
+     , 	int timeout	) {
+    (new core.AppBaseClass()).isElementPresent_Mobile(
+        	to
+         , 	timeout)
+}
+
+
+def static "core.AppBaseClass.xpathSetter"(
+    	String path	) {
+    (new core.AppBaseClass()).xpathSetter(
+        	path)
 }
 
 

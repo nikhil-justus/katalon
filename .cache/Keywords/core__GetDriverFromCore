@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "2631A4F3F35F5ED100A23DD4C97B59BA",
+  "keywordFileContentHash": "3E01022C1B9AF959901EA3A8DBABA522",
   "keywordClasses": [
     {
       "name": "core.GetDriverFromCore",
@@ -20,22 +20,13 @@
           "javadoc": "/**\n\t * Get mobile driver for current session\n\t * @return mobile driver for current session\n\t */"
         },
         {
+          "name": "stopWebDriver",
+          "parameters": [],
+          "javadoc": "/**\n\t * Stop the current mobile driver session\n\t */"
+        },
+        {
           "name": "setAndroidCapabilities",
-          "parameters": [
-            {
-              "name": "appId",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.String",
-                "unresolvedClassName": "String",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
+          "parameters": [],
           "javadoc": "/**\n\t * Set mobile driver capabilities before start of session\n\t */"
         },
         {

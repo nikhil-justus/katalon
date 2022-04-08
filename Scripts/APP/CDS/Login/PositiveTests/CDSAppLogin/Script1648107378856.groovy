@@ -8,15 +8,15 @@ CustomKeywords.'core.GetDriverFromCore.setAndroidCapabilities'()
 
 CustomKeywords.'core.GetDriverFromCore.setAndroidCapabilities'()
 
-CustomKeywords.'core.AppUtils.start'()
+CustomKeywords.'core.AppBaseClass.start'()
 
-CustomKeywords.'core.AppUtils.waitForElement'(CustomKeywords.'app.cds.LoginPage.loginInputField'())
+CustomKeywords.'core.AppBaseClass.waitForElement'(CustomKeywords.'app.cds.LoginPage.loginInputField'())
 
 CustomKeywords.'app.cds.LoginPage.inputLoginNumber'("1638300361")
 
 CustomKeywords.'app.cds.LoginPage.clickSendSMSButton'()
 
-CustomKeywords.'core.AppUtils.stop'()
+CustomKeywords.'core.AppBaseClass.stop'()
 
 
 

@@ -1,18 +1,16 @@
 {
-  "keywordFileContentHash": "D3AF3B91FEB9B8048674EA7D97C9B164",
+  "keywordFileContentHash": "BD39F6722A1D16314AD099575345184E",
   "keywordClasses": [
     {
       "name": "app.cds.LoginPage",
       "keywordMethods": [
         {
           "name": "loginInputField",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "sendSMSClickableButton",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         },
         {
           "name": "inputLoginNumber",
@@ -30,16 +28,14 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "clickSendSMSButton",
-          "parameters": [],
-          "javadoc": ""
+          "parameters": []
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

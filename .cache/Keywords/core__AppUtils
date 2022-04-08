@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "2027B9C67C3ED5C3CDFC6D81CA87D362",
+  "keywordFileContentHash": "14A330BEE8AED55D9E8436BE1C737AB6",
   "keywordClasses": [
     {
       "name": "core.AppUtils",
@@ -20,8 +20,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "isElementPresent_Mobile",
@@ -52,14 +51,13 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\n\t * Check if element present in timeout\n\t * @param to Katalon test object\n\t * @param timeout time to wait for element to show up\n\t * @return true if element present, otherwise false\n\t */"
+          ]
         },
         {
-          "name": "setAndroidCapabilities",
+          "name": "xpathSetter",
           "parameters": [
             {
-              "name": "appId",
+              "name": "path",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.String",
@@ -71,11 +69,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

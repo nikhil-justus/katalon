@@ -5,8 +5,9 @@ import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.DesiredCapabilities
 
 import com.kms.katalon.core.annotation.Keyword
-import com.kms.katalon.core.configuration.RunConfiguration
+import com.kms.katalon.core.mobile.driver.MobileDriverType
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
 import com.kms.katalon.core.webui.driver.DriverFactory
 
@@ -61,27 +62,36 @@ class GetDriverFromCore {
 	def WebDriver getWebDriverInstance() {
 		return DriverFactory.getWebDriver()
 	}
+	
+	/**
+	 * Stop the current mobile driver session
+	 */
+	@Keyword
+	def stopWebDriver() {
+		WebUI.closeBrowser()
+		println "Appium Remote Service has been stopped"
+	}
 
 	/**
 	 * Set mobile driver capabilities before start of session
 	 */
 	@Keyword
-	def setAndroidCapabilities(String appId) {
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'app', appId)
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'visual', true)
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'isRealMobile', true)
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'platformVersion', '10')
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'platformName', 'Android')
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'build', 'CDSApp')
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'name', 'CDSAppRun')
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'video', true)
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'network', true)
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'console', true)
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'deviceName', 'Galaxy S10')
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'appWaitActivity', '*')
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'user', 'tech-automation')
-		RunConfiguration.setDriverPreferencesProperty('Remote', 'accessKey', '2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr')
-		println RunConfiguration.getDriverPreferencesProperties()
+	def setAndroidCapabilities() {
+		DesiredCapabilities desiredCapabilities = DesiredCapabilities.android()
+		desiredCapabilities.setCapability('visual', true)
+		desiredCapabilities.setCapability('isRealMobile', true)
+		desiredCapabilities.setCapability('platformVersion', '10')
+		desiredCapabilities.setCapability('platformName', 'Android')
+		desiredCapabilities.setCapability('build', 'CDSApp')
+		desiredCapabilities.setCapability('name', 'CDSAppRun')
+		desiredCapabilities.setCapability('video', true)
+		desiredCapabilities.setCapability('network', true)
+		desiredCapabilities.setCapability('console', true)
+		desiredCapabilities.setCapability('deviceName', 'Galaxy S10')
+		desiredCapabilities.setCapability('appWaitActivity', '*')
+		desiredCapabilities.setCapability('user', 'tech-automation')
+		desiredCapabilities.setCapability('accessKey', '2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr')		
+		return desiredCapabilities
 	}
 
 	/**
@@ -99,8 +109,8 @@ class GetDriverFromCore {
 	 */
 	@Keyword
 	def startAppDriver(String appId) {
-		setAndroidCapabilities(appId)
-		Mobile.startApplication(appId, true)
+		MobileDriverFactory.startRemoteMobileDriver('https://tech-automation:2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr@beta-hub.lambdatest.com/wd/hub', setAndroidCapabilities(), MobileDriverType.ANDROID_DRIVER, appId)
+		println "Appium Remote Service has been started"
 	}
 
 	/**
@@ -109,6 +119,6 @@ class GetDriverFromCore {
 	@Keyword
 	def stopAppDriver() {
 		Mobile.closeApplication()
-		println "Appium Remote Service is stopped"
+		println "Appium Remote Service has been stopped"
 	}
 }

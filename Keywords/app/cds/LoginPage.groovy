@@ -1,34 +1,29 @@
 package app.cds
 
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.testobject.TestObject
 
+import core.AppBaseClass
 import internal.GlobalVariable
 
 
 
-public class LoginPage {
+public class LoginPage extends AppBaseClass{
 
-	//	Mobile mobile = new Mobile();
 
 	//Elements
 
 	@Keyword
 	def TestObject loginInputField() {
-		return findTestObject('Object Repository/App/CDSApp/LoginScreenPageObjects/loginInputField')
+		return xpathSetter('App/CDSApp/LoginScreenPageObjects/loginField')
 	}
 
-	//CustomKeywords.'app.cds.LoginPage.loginInputField'()
 
 	@Keyword
 	def TestObject sendSMSClickableButton() {
-		return findTestObject('App/CDSApp/LoginScreenPageObjects/SendSMSClickableButton')
+		return xpathSetter('/App/CDSApp/LoginScreenPageObjects/Button')
 	}
-
-
 
 
 	//Functions

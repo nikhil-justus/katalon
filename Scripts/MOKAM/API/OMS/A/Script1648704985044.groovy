@@ -2,9 +2,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 println('TestCase A is being called')
 
-CustomKeywords.'core.GetDriverFromCore.startWebDriver'()
-
-CustomKeywords.'core.AppUtils.setAndroidCapabilities'('lambda123456')
+WebUI.openBrowser("https://docs.katalon.com/katalon-studio/docs/console-mode-execution.html")
 
 
 
