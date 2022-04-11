@@ -62,7 +62,7 @@ class GetDriverFromCore {
 	def WebDriver getWebDriverInstance() {
 		return DriverFactory.getWebDriver()
 	}
-	
+
 	/**
 	 * Stop the current mobile driver session
 	 */
@@ -90,7 +90,7 @@ class GetDriverFromCore {
 		desiredCapabilities.setCapability('deviceName', 'Galaxy S10')
 		desiredCapabilities.setCapability('appWaitActivity', '*')
 		desiredCapabilities.setCapability('user', 'tech-automation')
-		desiredCapabilities.setCapability('accessKey', '2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr')		
+		desiredCapabilities.setCapability('accessKey', '2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr')
 		return desiredCapabilities
 	}
 

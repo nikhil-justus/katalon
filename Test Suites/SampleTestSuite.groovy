@@ -13,7 +13,7 @@ import com.kms.katalon.core.annotation.TearDownTestCase
 @SetUp(skipped = false) // Please change skipped to be false to activate this method.
 def setUp() {
 	CustomKeywords.'core.GetDriverFromCore.startWebDriver'()
-	CustomKeywords.'core.AppUtils.setAndroidCapabilities'('lambda123456')
+	CustomKeywords.'core.GetDriverFromCore.startAppDriver'('lambda123456')
 }
 
 /**

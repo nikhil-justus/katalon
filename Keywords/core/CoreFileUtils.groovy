@@ -2,54 +2,14 @@ package core
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.configuration.RunConfiguration
+import com.kms.katalon.core.testdata.DBData
+import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testdata.reader.ExcelFactory
 import com.kms.katalon.core.testobject.ResponseObject
 
 import groovy.json.JsonSlurper
 
 public class CoreFileUtils {
-
-
-	/**
-	 * Read excel file
-	 * @param path Excel File Path
-	 * @param sheetName excel sheet for usage
-	 * @return Hashmap [String,List<Object>] with header as key and rows as list
-	 */
-	@Keyword
-	def readExcel(String path, String sheetName) {
-		String filePath = RunConfiguration.getProjectDir() + path
-		Object excelData = ExcelFactory.getExcelDataWithDefaultSheet(filePath, sheetName, true)
-
-		List<List<Object>>data = excelData.getAllData()
-		int columnNumbers = excelData.getColumnNumbers()
-		String[] headers = excelData.getColumnNames()
-
-		HashMap<String,List<Object>> map = new HashMap<String,List<Object>>()
-		for (int i=0; i<columnNumbers; i++) {
-			ArrayList<Object> list = new ArrayList()
-			for(line in data) {
-				String value = line[i]
-				Object parsedValue;
-				if (value == null) {
-					continue
-				}
-				else if (value.isInteger()) {
-					parsedValue = Integer.parseInt(value)
-				}
-				else if (value.isDouble()) {
-					parsedValue = Double.parseDouble(value)
-				}
-				else {
-					parsedValue = value
-				}
-				list.add(parsedValue)
-			}
-			map.put(headers[i], list)
-		}
-		return map
-	}
-
 	/**
 	 * Read excel file
 	 * @param path Excel File Path
@@ -60,11 +20,26 @@ public class CoreFileUtils {
 	def readExcelWithEachRowAsList(String path, String sheetName) {
 		String filePath = RunConfiguration.getProjectDir() + path
 		Object excelData = ExcelFactory.getExcelDataWithDefaultSheet(filePath, sheetName, true)
+		return dataAsList(excelData)
+	}
+	
+	@Keyword
+	def readDBDataWithEachRowAsList(DBData dbData) {
+		return dataAsList(dbData)
+	}
 
-		List<List<Object>>data = excelData.getAllData()
-		int columnNumbers = excelData.getColumnNumbers()
-		String[] headers = excelData.getColumnNames()
-
+	/**
+	 * Convert All Data File Components as list
+	 * @param file data
+	 * @param columnNumbers
+	 * @param headers
+	 * @return Hashmap [String,List<Object>] with each row as List
+	 */
+	def dataAsList(TestData fileData) {		
+		List<List<Object>>data = fileData.allData
+		int columnNumbers = fileData.columnNumbers
+		String[] headers = fileData.columnNames
+		
 		ArrayList<HashMap<String, Object>> arr = new ArrayList()
 		for(line in data) {
 			HashMap<String, Object> map = new HashMap();

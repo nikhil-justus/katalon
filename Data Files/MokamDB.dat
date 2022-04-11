@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>db</name>
+   <name>MokamDB</name>
    <tag></tag>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
@@ -11,7 +11,7 @@
    <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
    <isInternalPath>false</isInternalPath>
    <password>Vm5rc2hvcEA2NQ==</password>
-   <query>select * from shopup_oms.pincodes order by id desc limit 10</query>
+   <query>select * from shopup_cross.search_configs;</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>vnksho</user>

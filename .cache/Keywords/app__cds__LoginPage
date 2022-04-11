@@ -6,11 +6,13 @@
       "keywordMethods": [
         {
           "name": "loginInputField",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "sendSMSClickableButton",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         },
         {
           "name": "inputLoginNumber",
@@ -28,14 +30,16 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "clickSendSMSButton",
-          "parameters": []
+          "parameters": [],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

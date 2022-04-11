@@ -1,5 +1,7 @@
 package core
 
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
 import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
@@ -7,7 +9,6 @@ import com.kms.katalon.core.mobile.helper.MobileElementCommonHelper
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import internal.GlobalVariable
 
@@ -39,10 +40,10 @@ public class AppBaseClass {
 		}
 		return false;
 	}
-	
+
 	@Keyword
 	def xpathSetter(String path) {
-		Mobile.waitForElementPresent(findTestObject(path), GlobalVariable.G_Timeout)
+		waitForElement(findTestObject(path))
 		return findTestObject(path)
 	}
 }

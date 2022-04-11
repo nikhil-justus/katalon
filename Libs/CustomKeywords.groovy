@@ -5,6 +5,8 @@
 
 import java.lang.String
 
+import com.kms.katalon.core.testdata.DBData
+
 import com.kms.katalon.core.testobject.ResponseObject
 
 import com.kms.katalon.core.testobject.TestObject
@@ -88,26 +90,7 @@ def static "core.Helper.addGlobalVariable"(
          , 	value)
 }
 
- /**
-	 * Read excel file
-	 * @param path Excel File Path
-	 * @param sheetName excel sheet for usage
-	 * @return Hashmap [String,List<Object>] with header as key and rows as list
-	 */ 
-def static "core.CoreFileUtils.readExcel"(
-    	String path	
-     , 	String sheetName	) {
-    (new core.CoreFileUtils()).readExcel(
-        	path
-         , 	sheetName)
-}
 
- /**
-	 * Read excel file
-	 * @param path Excel File Path
-	 * @param sheetName excel sheet for usage
-	 * @return Hashmap [String,List<Object>] with each row as List
-	 */ 
 def static "core.CoreFileUtils.readExcelWithEachRowAsList"(
     	String path	
      , 	String sheetName	) {
@@ -116,22 +99,21 @@ def static "core.CoreFileUtils.readExcelWithEachRowAsList"(
          , 	sheetName)
 }
 
- /**
-	 * Parse json file and return as a json object for validation 
-	 * @param json file path
-	 * @return json object
-	 */ 
+
+def static "core.CoreFileUtils.readDBDataWithEachRowAsList"(
+    	DBData dbData	) {
+    (new core.CoreFileUtils()).readDBDataWithEachRowAsList(
+        	dbData)
+}
+
+
 def static "core.CoreFileUtils.getStaticJsonData"(
     	String fileName	) {
     (new core.CoreFileUtils()).getStaticJsonData(
         	fileName)
 }
 
- /**
-	 * Parse the json response and return as a map of the response
-	 * @param ResponseObject from API call
-	 * @return HashMap
-	 */ 
+
 def static "core.CoreFileUtils.parseResponseToMap"(
     	ResponseObject response	) {
     (new core.CoreFileUtils()).parseResponseToMap(
@@ -189,6 +171,20 @@ def static "core.AppBaseClass.xpathSetter"(
 }
 
 
+def static "core.Database.getQuery"(
+    	String query	) {
+    (new core.Database()).getQuery(
+        	query)
+}
+
+
+def static "core.Database.fetchDB"(
+    	DBData data	) {
+    (new core.Database()).fetchDB(
+        	data)
+}
+
+
 def static "api.paywell.Login.loginInit"(
     	String phone	) {
     (new api.paywell.Login()).loginInit(
@@ -202,15 +198,6 @@ def static "api.paywell.Login.login"(
     (new api.paywell.Login()).login(
         	phone
          , 	otp)
-}
-
-
-def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkElement"(
-    	Eyes eyes	
-     , 	WebElement element	) {
-    (new com.kms.katalon.keyword.applitools.BasicKeywords()).checkElement(
-        	eyes
-         , 	element)
 }
 
 
@@ -230,17 +217,19 @@ def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkTestObject"(
 }
 
 
-def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpen"(
-    	String testName	
-     , 	RectangleSize viewportSize	) {
-    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesOpen(
-        	testName
-         , 	viewportSize)
+def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkElement"(
+    	Eyes eyes	
+     , 	WebElement element	) {
+    (new com.kms.katalon.keyword.applitools.BasicKeywords()).checkElement(
+        	eyes
+         , 	element)
 }
 
 
-def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
-    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesClose"(
+    	Eyes eyes	) {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesClose(
+        	eyes)
 }
 
 
@@ -255,8 +244,15 @@ def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpenWithBaseline
 }
 
 
-def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesClose"(
-    	Eyes eyes	) {
-    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesClose(
-        	eyes)
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
+}
+
+
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpen"(
+    	String testName	
+     , 	RectangleSize viewportSize	) {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesOpen(
+        	testName
+         , 	viewportSize)
 }

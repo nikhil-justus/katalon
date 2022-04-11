@@ -1,0 +1,49 @@
+{
+  "keywordFileContentHash": "7AE44FC19CB052C84556B33F80985A6B",
+  "keywordClasses": [
+    {
+      "name": "core.Database",
+      "keywordMethods": [
+        {
+          "name": "getQuery",
+          "parameters": [
+            {
+              "name": "query",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "fetchDB",
+          "parameters": [
+            {
+              "name": "data",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testdata.DBData",
+                "unresolvedClassName": "DBData",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
