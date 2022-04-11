@@ -14,4 +14,14 @@
       <initValue>''</initValue>
       <name>testDataSet</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>currentTestCaseId</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>currentTestSuiteId</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

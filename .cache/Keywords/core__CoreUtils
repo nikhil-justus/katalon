@@ -1,14 +1,14 @@
 {
-  "keywordFileContentHash": "4FB440AD880735BF3634007025C1202B",
+  "keywordFileContentHash": "6DB0C5E553429FB7FAC2480FC5DBFFFB",
   "keywordClasses": [
     {
-      "name": "core.Database",
+      "name": "core.CoreUtils",
       "keywordMethods": [
         {
-          "name": "getQuery",
+          "name": "getStaticJsonData",
           "parameters": [
             {
-              "name": "query",
+              "name": "fileName",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.String",
@@ -20,18 +20,17 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
-          "name": "fetchDB",
+          "name": "parseResponseToMap",
           "parameters": [
             {
-              "name": "data",
+              "name": "response",
               "initialExpression": "",
               "type": {
-                "fullClassName": "com.kms.katalon.core.testdata.DBData",
-                "unresolvedClassName": "DBData",
+                "fullClassName": "com.kms.katalon.core.testobject.ResponseObject",
+                "unresolvedClassName": "ResponseObject",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": false,
@@ -39,16 +38,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "mokamDBConnection",
-          "parameters": [],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

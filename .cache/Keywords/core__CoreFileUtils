@@ -1,95 +1,9 @@
 {
-  "keywordFileContentHash": "E44870F1F632A9A79EF82631430BFF77",
+  "keywordFileContentHash": "7CDB3F09003E9EA7C492F694A200DCAD",
   "keywordClasses": [
     {
-      "name": "core.CoreFileUtils",
-      "keywordMethods": [
-        {
-          "name": "readExcelWithEachRowAsList",
-          "parameters": [
-            {
-              "name": "path",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.String",
-                "unresolvedClassName": "String",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "sheetName",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.String",
-                "unresolvedClassName": "String",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "readDBDataWithEachRowAsList",
-          "parameters": [
-            {
-              "name": "dbData",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testdata.DBData",
-                "unresolvedClassName": "DBData",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "getStaticJsonData",
-          "parameters": [
-            {
-              "name": "fileName",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "java.lang.String",
-                "unresolvedClassName": "String",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "parseResponseToMap",
-          "parameters": [
-            {
-              "name": "response",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.ResponseObject",
-                "unresolvedClassName": "ResponseObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ]
-        }
-      ]
+      "name": "core.coreFileUtils",
+      "keywordMethods": []
     }
   ],
   "javadocParsed": false

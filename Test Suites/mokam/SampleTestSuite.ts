@@ -14,13 +14,13 @@
    <testCaseLink>
       <guid>70b5abce-7cf3-491d-8eac-d7bcda564d03</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/MOKAM/API/OMS/A</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>4a747bd9-2229-441e-a03f-e69d72799198</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/MOKAM/WEB/CMT/B</testCaseId>
    </testCaseLink>
    <testCaseLink>

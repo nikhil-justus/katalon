@@ -5,11 +5,11 @@
 
 import java.lang.String
 
+import com.kms.katalon.core.testobject.TestObject
+
 import com.kms.katalon.core.testdata.DBData
 
 import com.kms.katalon.core.testobject.ResponseObject
-
-import com.kms.katalon.core.testobject.TestObject
 
 import com.applitools.eyes.selenium.Eyes
 
@@ -91,33 +91,12 @@ def static "core.Helper.addGlobalVariable"(
 }
 
 
-def static "core.CoreFileUtils.readExcelWithEachRowAsList"(
+def static "core.FileUtils.readExcelWithEachRowAsList"(
     	String path	
      , 	String sheetName	) {
-    (new core.CoreFileUtils()).readExcelWithEachRowAsList(
+    (new core.FileUtils()).readExcelWithEachRowAsList(
         	path
          , 	sheetName)
-}
-
-
-def static "core.CoreFileUtils.readDBDataWithEachRowAsList"(
-    	DBData dbData	) {
-    (new core.CoreFileUtils()).readDBDataWithEachRowAsList(
-        	dbData)
-}
-
-
-def static "core.CoreFileUtils.getStaticJsonData"(
-    	String fileName	) {
-    (new core.CoreFileUtils()).getStaticJsonData(
-        	fileName)
-}
-
-
-def static "core.CoreFileUtils.parseResponseToMap"(
-    	ResponseObject response	) {
-    (new core.CoreFileUtils()).parseResponseToMap(
-        	response)
 }
 
 
@@ -182,6 +161,25 @@ def static "core.Database.fetchDB"(
     	DBData data	) {
     (new core.Database()).fetchDB(
         	data)
+}
+
+
+def static "core.Database.mokamDBConnection"() {
+    (new core.Database()).mokamDBConnection()
+}
+
+
+def static "core.CoreUtils.getStaticJsonData"(
+    	String fileName	) {
+    (new core.CoreUtils()).getStaticJsonData(
+        	fileName)
+}
+
+
+def static "core.CoreUtils.parseResponseToMap"(
+    	ResponseObject response	) {
+    (new core.CoreUtils()).parseResponseToMap(
+        	response)
 }
 
 

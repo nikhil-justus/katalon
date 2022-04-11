@@ -1,32 +1,12 @@
 package core
 
 import com.kms.katalon.core.annotation.Keyword
-import com.kms.katalon.core.configuration.RunConfiguration
-import com.kms.katalon.core.testdata.DBData
 import com.kms.katalon.core.testdata.TestData
-import com.kms.katalon.core.testdata.reader.ExcelFactory
 import com.kms.katalon.core.testobject.ResponseObject
 
 import groovy.json.JsonSlurper
 
-public class CoreFileUtils {
-	/**
-	 * Read excel file
-	 * @param path Excel File Path
-	 * @param sheetName excel sheet for usage
-	 * @return Hashmap [String,List<Object>] with each row as List
-	 */
-	@Keyword
-	def readExcelWithEachRowAsList(String path, String sheetName) {
-		String filePath = RunConfiguration.getProjectDir() + path
-		Object excelData = ExcelFactory.getExcelDataWithDefaultSheet(filePath, sheetName, true)
-		return dataAsList(excelData)
-	}
-	
-	@Keyword
-	def readDBDataWithEachRowAsList(DBData dbData) {
-		return dataAsList(dbData)
-	}
+public class CoreUtils {
 
 	/**
 	 * Convert All Data File Components as list
@@ -35,11 +15,11 @@ public class CoreFileUtils {
 	 * @param headers
 	 * @return Hashmap [String,List<Object>] with each row as List
 	 */
-	def dataAsList(TestData fileData) {		
+	def dataAsList(TestData fileData) {
 		List<List<Object>>data = fileData.allData
 		int columnNumbers = fileData.columnNumbers
 		String[] headers = fileData.columnNames
-		
+
 		ArrayList<HashMap<String, Object>> arr = new ArrayList()
 		for(line in data) {
 			HashMap<String, Object> map = new HashMap();

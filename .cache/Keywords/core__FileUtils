@@ -1,14 +1,27 @@
 {
-  "keywordFileContentHash": "4FB440AD880735BF3634007025C1202B",
+  "keywordFileContentHash": "BF9371D7965A2EA82B70711120A86141",
   "keywordClasses": [
     {
-      "name": "core.Database",
+      "name": "core.FileUtils",
       "keywordMethods": [
         {
-          "name": "getQuery",
+          "name": "readExcelWithEachRowAsList",
           "parameters": [
             {
-              "name": "query",
+              "name": "path",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "sheetName",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.String",
@@ -20,35 +33,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "fetchDB",
-          "parameters": [
-            {
-              "name": "data",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testdata.DBData",
-                "unresolvedClassName": "DBData",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": ""
-        },
-        {
-          "name": "mokamDBConnection",
-          "parameters": [],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

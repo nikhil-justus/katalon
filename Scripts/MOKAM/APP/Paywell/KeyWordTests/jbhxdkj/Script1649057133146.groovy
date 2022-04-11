@@ -1,7 +1,7 @@
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import com.kms.katalon.core.testdata.DBData as DBData
 
-DBData dbTestData = findTestData('MokamDB')
+DBData dbTestData = findTestData('null')
 
 println(dbTestData.columnNames)
 
