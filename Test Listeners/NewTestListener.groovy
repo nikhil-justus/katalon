@@ -5,6 +5,7 @@ import com.kms.katalon.core.annotation.BeforeTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 
+import constants.FileConstants
 import internal.GlobalVariable
 
 
@@ -17,7 +18,7 @@ class NewTestListener {
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		CustomKeywords.'core.Helper.addGlobalVariable'('currentTestCaseId', testCaseContext.testCaseId)
 		String currentTestSuiteId = GlobalVariable.currentTestSuiteId
-		currentTestSuiteId = currentTestSuiteId.replace('Test Suites/', '/Test Files/testSuiteMasterFiles/') + '.xlsx'
+		currentTestSuiteId = currentTestSuiteId.replace(FileConstants.TEST_SUITES_PATH, '/Test Files/testSuiteMasterFiles/') + '.xlsx'
 		println currentTestSuiteId
 		ArrayList<HashMap<String, Object>> arr = CustomKeywords.'core.FileUtils.readExcelWithEachRowAsList'(currentTestSuiteId, "Sheet1")
 		for (map in arr) {

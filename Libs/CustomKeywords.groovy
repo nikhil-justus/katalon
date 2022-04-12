@@ -90,7 +90,12 @@ def static "core.Helper.addGlobalVariable"(
          , 	value)
 }
 
-
+ /**
+	 * Read excel file
+	 * @param path Excel File Path
+	 * @param sheetName excel sheet for usage
+	 * @return HashMap [String,List<Object>] with each row as List
+	 */ 
 def static "core.FileUtils.readExcelWithEachRowAsList"(
     	String path	
      , 	String sheetName	) {
@@ -168,14 +173,22 @@ def static "core.Database.mokamDBConnection"() {
     (new core.Database()).mokamDBConnection()
 }
 
-
+ /**
+	 * Parse json file and return as a json object for validation 
+	 * @param json file path
+	 * @return json object
+	 */ 
 def static "core.CoreUtils.getStaticJsonData"(
     	String fileName	) {
     (new core.CoreUtils()).getStaticJsonData(
         	fileName)
 }
 
-
+ /**
+	 * Parse the json response and return as a map of the response
+	 * @param ResponseObject from API call
+	 * @return HashMap
+	 */ 
 def static "core.CoreUtils.parseResponseToMap"(
     	ResponseObject response	) {
     (new core.CoreUtils()).parseResponseToMap(
@@ -199,6 +212,15 @@ def static "api.paywell.Login.login"(
 }
 
 
+def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkElement"(
+    	Eyes eyes	
+     , 	WebElement element	) {
+    (new com.kms.katalon.keyword.applitools.BasicKeywords()).checkElement(
+        	eyes
+         , 	element)
+}
+
+
 def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkWindow"(
     	String testName	) {
     (new com.kms.katalon.keyword.applitools.BasicKeywords()).checkWindow(
@@ -215,19 +237,17 @@ def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkTestObject"(
 }
 
 
-def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkElement"(
-    	Eyes eyes	
-     , 	WebElement element	) {
-    (new com.kms.katalon.keyword.applitools.BasicKeywords()).checkElement(
-        	eyes
-         , 	element)
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
 }
 
 
-def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesClose"(
-    	Eyes eyes	) {
-    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesClose(
-        	eyes)
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpen"(
+    	String testName	
+     , 	RectangleSize viewportSize	) {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesOpen(
+        	testName
+         , 	viewportSize)
 }
 
 
@@ -242,15 +262,8 @@ def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpenWithBaseline
 }
 
 
-def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
-    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
-}
-
-
-def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpen"(
-    	String testName	
-     , 	RectangleSize viewportSize	) {
-    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesOpen(
-        	testName
-         , 	viewportSize)
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesClose"(
+    	Eyes eyes	) {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesClose(
+        	eyes)
 }
