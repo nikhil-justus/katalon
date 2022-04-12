@@ -17,21 +17,6 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-    public static Object testDataSet
-     
-    /**
-     * <p></p>
-     */
-    public static Object currentTestCaseId
-     
-    /**
-     * <p></p>
-     */
-    public static Object currentTestSuiteId
-     
-    /**
-     * <p></p>
-     */
     public static Object G_Timeout
      
     /**
@@ -72,9 +57,6 @@ public class GlobalVariable {
             selectedVariables += TestCaseMain.getParsedValues(RunConfiguration.getOverridingParameters())
     
             timeOut = selectedVariables['timeOut']
-            testDataSet = selectedVariables['testDataSet']
-            currentTestCaseId = selectedVariables['currentTestCaseId']
-            currentTestSuiteId = selectedVariables['currentTestSuiteId']
             G_Timeout = selectedVariables['G_Timeout']
             G_NotificationMessage = selectedVariables['G_NotificationMessage']
             G_AndroidApp = selectedVariables['G_AndroidApp']

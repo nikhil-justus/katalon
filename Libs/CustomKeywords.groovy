@@ -5,11 +5,11 @@
 
 import java.lang.String
 
+import com.kms.katalon.core.testobject.ResponseObject
+
 import com.kms.katalon.core.testobject.TestObject
 
 import com.kms.katalon.core.testdata.DBData
-
-import com.kms.katalon.core.testobject.ResponseObject
 
 import com.applitools.eyes.selenium.Eyes
 
@@ -17,6 +17,73 @@ import org.openqa.selenium.WebElement
 
 import com.applitools.eyes.RectangleSize
 
+
+
+def static "core.Helper.addGlobalVariable"(
+    	String name	
+     , 	Object value	) {
+    (new core.Helper()).addGlobalVariable(
+        	name
+         , 	value)
+}
+
+ /**
+	 * Read excel file
+	 * @param path Excel File Path
+	 * @param sheetName excel sheet for usage
+	 * @return HashMap [String,List<Object>] with each row as List
+	 */ 
+def static "core.FileUtils.readExcelWithEachRowAsList"(
+    	String path	
+     , 	String sheetName	) {
+    (new core.FileUtils()).readExcelWithEachRowAsList(
+        	path
+         , 	sheetName)
+}
+
+
+def static "app.cds.LoginPage.loginInputField"() {
+    (new app.cds.LoginPage()).loginInputField()
+}
+
+
+def static "app.cds.LoginPage.sendSMSClickableButton"() {
+    (new app.cds.LoginPage()).sendSMSClickableButton()
+}
+
+
+def static "app.cds.LoginPage.inputLoginNumber"(
+    	String text	) {
+    (new app.cds.LoginPage()).inputLoginNumber(
+        	text)
+}
+
+
+def static "app.cds.LoginPage.clickSendSMSButton"() {
+    (new app.cds.LoginPage()).clickSendSMSButton()
+}
+
+ /**
+	 * Parse json file and return as a json object for validation 
+	 * @param json file path
+	 * @return json object
+	 */ 
+def static "core.CoreUtils.getStaticJsonData"(
+    	String fileName	) {
+    (new core.CoreUtils()).getStaticJsonData(
+        	fileName)
+}
+
+ /**
+	 * Parse the json response and return as a map of the response
+	 * @param ResponseObject from API call
+	 * @return HashMap
+	 */ 
+def static "core.CoreUtils.parseResponseToMap"(
+    	ResponseObject response	) {
+    (new core.CoreUtils()).parseResponseToMap(
+        	response)
+}
 
  /**
 	 * Set web driver capabilities before start of session
@@ -82,51 +149,6 @@ def static "core.GetDriverFromCore.stopAppDriver"() {
 }
 
 
-def static "core.Helper.addGlobalVariable"(
-    	String name	
-     , 	Object value	) {
-    (new core.Helper()).addGlobalVariable(
-        	name
-         , 	value)
-}
-
- /**
-	 * Read excel file
-	 * @param path Excel File Path
-	 * @param sheetName excel sheet for usage
-	 * @return HashMap [String,List<Object>] with each row as List
-	 */ 
-def static "core.FileUtils.readExcelWithEachRowAsList"(
-    	String path	
-     , 	String sheetName	) {
-    (new core.FileUtils()).readExcelWithEachRowAsList(
-        	path
-         , 	sheetName)
-}
-
-
-def static "app.cds.LoginPage.loginInputField"() {
-    (new app.cds.LoginPage()).loginInputField()
-}
-
-
-def static "app.cds.LoginPage.sendSMSClickableButton"() {
-    (new app.cds.LoginPage()).sendSMSClickableButton()
-}
-
-
-def static "app.cds.LoginPage.inputLoginNumber"(
-    	String text	) {
-    (new app.cds.LoginPage()).inputLoginNumber(
-        	text)
-}
-
-
-def static "app.cds.LoginPage.clickSendSMSButton"() {
-    (new app.cds.LoginPage()).clickSendSMSButton()
-}
-
-
 def static "core.AppBaseClass.waitForElement"(
     	TestObject object	) {
     (new core.AppBaseClass()).waitForElement(
@@ -171,28 +193,6 @@ def static "core.Database.fetchDB"(
 
 def static "core.Database.mokamDBConnection"() {
     (new core.Database()).mokamDBConnection()
-}
-
- /**
-	 * Parse json file and return as a json object for validation 
-	 * @param json file path
-	 * @return json object
-	 */ 
-def static "core.CoreUtils.getStaticJsonData"(
-    	String fileName	) {
-    (new core.CoreUtils()).getStaticJsonData(
-        	fileName)
-}
-
- /**
-	 * Parse the json response and return as a map of the response
-	 * @param ResponseObject from API call
-	 * @return HashMap
-	 */ 
-def static "core.CoreUtils.parseResponseToMap"(
-    	ResponseObject response	) {
-    (new core.CoreUtils()).parseResponseToMap(
-        	response)
 }
 
 

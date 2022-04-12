@@ -7,10 +7,9 @@ import internal.GlobalVariable
 
 println('TestCase B is being called')
 
-WebUI.closeBrowser()
-
-Mobile.waitForElementPresent(findTestObject('App/CDSApp/LoginScreenPageObjects/Button'), GlobalVariable.G_Timeout)
-
-CustomKeywords.'app.cds.LoginPage.inputLoginNumber'('1638300361')
-
-CustomKeywords.'core.GetDriverFromCore.stopAppDriver'()
+//WebUI.closeBrowser()
+//
+//Mobile.waitForElementPresent(findTestObject('App/CDSApp/LoginScreenPageObjects/Button'), GlobalVariable.G_Timeout)
+//
+//CustomKeywords.'app.cds.LoginPage.inputLoginNumber'('1638300361')
+//
