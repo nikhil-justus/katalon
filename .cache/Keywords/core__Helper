@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "1C68EF29808BD65E89FAA0377126644C",
+  "keywordFileContentHash": "80AC1C2F246147F1ABC7AF63DF8ADF19",
   "keywordClasses": [
     {
       "name": "core.Helper",
@@ -33,11 +33,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

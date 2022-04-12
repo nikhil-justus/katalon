@@ -7,9 +7,12 @@ import org.openqa.selenium.remote.DesiredCapabilities
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.mobile.driver.MobileDriverType
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
 import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import constants.FileRouteConstants
+import constants.RemoteConstants
 
 
 class GetDriverFromCore {
@@ -21,7 +24,7 @@ class GetDriverFromCore {
 	@Keyword
 	def setWebDriverCapabilities() {
 		String dir = System.getProperty("user.dir")
-		String filePath = dir + "/Test Files/Downloads"
+		String filePath = dir + "/" + FileRouteConstants.DOWNLOAD_FILES_PATH
 
 		ChromeOptions chromeOptions = new ChromeOptions()
 		chromeOptions.addArguments("--disable-plugins", "--disable-extensions",
@@ -78,19 +81,19 @@ class GetDriverFromCore {
 	@Keyword
 	def setAndroidCapabilities() {
 		DesiredCapabilities desiredCapabilities = DesiredCapabilities.android()
-		desiredCapabilities.setCapability('visual', true)
-		desiredCapabilities.setCapability('isRealMobile', true)
-		desiredCapabilities.setCapability('platformVersion', '10')
-		desiredCapabilities.setCapability('platformName', 'Android')
-		desiredCapabilities.setCapability('build', 'CDSApp')
-		desiredCapabilities.setCapability('name', 'CDSAppRun')
-		desiredCapabilities.setCapability('video', true)
-		desiredCapabilities.setCapability('network', true)
-		desiredCapabilities.setCapability('console', true)
-		desiredCapabilities.setCapability('deviceName', 'Galaxy S10')
-		desiredCapabilities.setCapability('appWaitActivity', '*')
-		desiredCapabilities.setCapability('user', 'tech-automation')
-		desiredCapabilities.setCapability('accessKey', '2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr')
+		desiredCapabilities.setCapability(RemoteConstants.VISUAL_KEY, true)
+		desiredCapabilities.setCapability(RemoteConstants.IS_REAL_MOBILE_KEY, true)
+		desiredCapabilities.setCapability(RemoteConstants.PLATFORM_VERSION_KEY, '10')
+		desiredCapabilities.setCapability(RemoteConstants.PLATFORM_NAME_KEY, RemoteConstants.ANDROID_PLATFORM_NAME)
+		desiredCapabilities.setCapability(RemoteConstants.BUILD_KEY, 'CDSApp')
+		desiredCapabilities.setCapability(RemoteConstants.NAME_KEY, 'CDSAppRun')
+		desiredCapabilities.setCapability(RemoteConstants.VIDEO_KEY, true)
+		desiredCapabilities.setCapability(RemoteConstants.NETWORK_KEY, true)
+		desiredCapabilities.setCapability(RemoteConstants.CONSOLE_KEY, true)
+		desiredCapabilities.setCapability(RemoteConstants.DEVICE_NAME_KEY, 'Galaxy S10')
+		desiredCapabilities.setCapability(RemoteConstants.APP_WAIT_ACTIVITY_KEY, '*')
+		desiredCapabilities.setCapability(RemoteConstants.USER_KEY, RemoteConstants.LAMBDA_TEST_USER_NAME)
+		desiredCapabilities.setCapability(RemoteConstants.ACCESS_KEY_KEY, RemoteConstants.LAMBDA_TEST_ACCESS_KEY)
 		return desiredCapabilities
 	}
 
@@ -109,7 +112,7 @@ class GetDriverFromCore {
 	 */
 	@Keyword
 	def startAppDriver(String appId) {
-		MobileDriverFactory.startRemoteMobileDriver('https://tech-automation:2NiPJtjYF464L8Z6p03HYmyUPNILaxHMNZAV86PghgTo57OnPr@beta-hub.lambdatest.com/wd/hub', setAndroidCapabilities(), MobileDriverType.ANDROID_DRIVER, appId)
+		MobileDriverFactory.startRemoteMobileDriver(RemoteConstants.LAMBDA_TEST_REMOTE_URL, setAndroidCapabilities(), MobileDriverType.ANDROID_DRIVER, appId)
 		println "Appium Remote Service has been started"
 	}
 

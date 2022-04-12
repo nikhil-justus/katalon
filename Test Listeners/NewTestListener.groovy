@@ -1,11 +1,9 @@
-import com.kms.katalon.core.annotation.AfterTestCase
-import com.kms.katalon.core.annotation.AfterTestSuite
-import com.kms.katalon.core.annotation.BeforeTestCase
-import com.kms.katalon.core.annotation.BeforeTestSuite
+import com.kms.katalon.core.annotation.*
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 
 import constants.FileConstants
+import constants.FileRouteConstants
 import internal.GlobalVariable
 
 
@@ -17,20 +15,18 @@ class NewTestListener {
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		CustomKeywords.'core.Helper.addGlobalVariable'('currentTestCaseId', testCaseContext.testCaseId)
-		String currentTestSuiteId = GlobalVariable.currentTestSuiteId
-		currentTestSuiteId = currentTestSuiteId.replace(FileConstants.TEST_SUITES_PATH, '/Test Files/testSuiteMasterFiles/') + '.xlsx'
-		println currentTestSuiteId
-		ArrayList<HashMap<String, Object>> arr = CustomKeywords.'core.FileUtils.readExcelWithEachRowAsList'(currentTestSuiteId, "Sheet1")
-		for (map in arr) {
-			String testCaseId = "Test Cases/"+map.Module+"/"+map.App+"/"+map.Service+"/"+map.TestCase
-			if (testCaseContext.getTestCaseId() == (testCaseId)) {
-				if (map.Execution == 'N') {
-					println "The test case has been skipped"
-					testCaseContext.skipThisTestCase()
-				}
-				CustomKeywords.'core.Helper.addGlobalVariable'('testDataSet', map.TestData)
+		HashMap<String, Object> map = GlobalVariable.masterData[GlobalVariable.currentRowId]
+		
+		String testCaseId = "Test Cases/"+map.Module+"/"+map.App+"/"+map.Service+"/"+map.TestCase
+
+		if (testCaseContext.getTestCaseId() == (testCaseId)) {
+			if (map.Execution == 'N') {
+				println "The test case" + testCaseId + "has been skipped"
+				testCaseContext.skipThisTestCase()
 			}
+			CustomKeywords.'core.Helper.addGlobalVariable'('testDataSet', map.TestData)
 		}
+		CustomKeywords.'core.Helper.addGlobalVariable'('currentRowId', GlobalVariable.currentRowId + 1)	
 	}
 
 	/**
@@ -48,6 +44,11 @@ class NewTestListener {
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
 		CustomKeywords.'core.Helper.addGlobalVariable'('currentTestSuiteId', testSuiteContext.testSuiteId)
+		CustomKeywords.'core.Helper.addGlobalVariable'('currentRowId', 0)
+		
+		String excelPath = GlobalVariable.currentTestSuiteId.replace(FileRouteConstants.TEST_SUITES_PATH, '/' + FileRouteConstants.TEST_SUITE_MASTER_FILES_PATH) + FileConstants.XLSX_FILE_FORMAT
+		ArrayList<HashMap<String, Object>> masterData = CustomKeywords.'core.FileUtils.readExcelWithEachRowAsList'(excelPath, FileConstants.DEFAULT_EXCEL_SHEET)
+		CustomKeywords.'core.Helper.addGlobalVariable'('masterData', masterData)
 	}
 
 	/**

@@ -4,6 +4,8 @@ import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.db.DatabaseConnection
 import com.kms.katalon.core.testdata.DBData
 
+import constants.DBConstants
+
 
 public class Database extends CoreUtils{
 
@@ -20,10 +22,6 @@ public class Database extends CoreUtils{
 
 	@Keyword
 	def mokamDBConnection() {
-		String sourceUrl = 'jdbc:mysql://uat-pub.vnksrvc.com'
-		String user = 'vnksho'
-		String password = 'Vnkshop@65'
-		String driverClassName = 'com.mysql.cj.jdbc.Driver'
-		return new DatabaseConnection(sourceUrl, user, password, driverClassName)
+		return new DatabaseConnection(DBConstants.MOKAM_STAGING_SOURCE_URL, DBConstants.MOKAM_STAGING_USER, DBConstants.MOKAM_STAGING_PASSWORD, DBConstants.DRIVER_CLASS_NAME)
 	}
 }
