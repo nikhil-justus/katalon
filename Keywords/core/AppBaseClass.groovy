@@ -28,7 +28,6 @@ public class AppBaseClass {
 	@Keyword
 	def isElementPresent_Mobile(TestObject to, int timeout){
 		try {
-			KeywordUtil.logInfo("Finding element with id:" + to.getObjectId())
 
 			WebElement element = MobileElementCommonHelper.findElement(to, timeout)
 			if (element != null) {

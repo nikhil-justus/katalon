@@ -3,6 +3,8 @@ import com.kms.katalon.core.annotation.SetupTestCase
 import com.kms.katalon.core.annotation.TearDown
 import com.kms.katalon.core.annotation.TearDownTestCase
 
+import core.constants.AppConstants
+
 /**
  * Some methods below are samples for using SetUp/TearDown in a test suite.
  */
@@ -12,8 +14,8 @@ import com.kms.katalon.core.annotation.TearDownTestCase
  */
 @SetUp(skipped = false) // Please change skipped to be false to activate this method.
 def setUp() {
-//	CustomKeywords.'core.GetDriverFromCore.startWebDriver'()
-//	CustomKeywords.'core.GetDriverFromCore.startAppDriver'('lambda123456')
+	CustomKeywords.'core.GetDriverFromCore.startWebDriver'()
+	CustomKeywords.'core.GetDriverFromCore.startAppDriver'(AppConstants.CDS_APP_ID)
 }
 
 /**
@@ -21,7 +23,8 @@ def setUp() {
  */
 @TearDown(skipped = false) // Please change skipped to be false to activate this method.
 def tearDown() {
-	//CustomKeywords.'core.GetDriverFromCore.stopAppDriver'()
+	CustomKeywords.'core.GetDriverFromCore.stopAppDriver'()
+	CustomKeywords.'core.GetDriverFromCore.stopWebDriver'()
 }
 
 /**

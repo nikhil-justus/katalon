@@ -1,10 +1,11 @@
-package core
+package core.database
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.db.DatabaseConnection
 import com.kms.katalon.core.testdata.DBData
 
-import constants.DBConstants
+import core.constants.DBConstants
+import core.utils.CoreUtils
 
 
 public class Database extends CoreUtils{

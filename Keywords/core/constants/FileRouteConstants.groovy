@@ -1,4 +1,4 @@
-package constants
+package core.constants
 
 public class FileRouteConstants {
 
@@ -13,9 +13,9 @@ public class FileRouteConstants {
 	public static final String REPORTS_PATH = "Reports/"
 
 	public static final String OBJECT_REPOSITORY_PATH = "Object Repository/"
-	
+
 	/*----------------ACCESSORIES----------------*/
-	
+
 	public static final String DOWNLOAD_FILES_PATH = TEST_FILES_PATH + "Downloads"
 
 	/*----------------TEST SUITE MASTER FILES----------------*/

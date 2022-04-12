@@ -1,38 +1,32 @@
 {
-  "keywordFileContentHash": "FC74FC23E46E875B9DBC832C28B3AF96",
+  "keywordFileContentHash": "368FB491C2BD13EE12FD1D86D5B6BAC3",
   "keywordClasses": [
     {
       "name": "core.GetDriverFromCore",
       "keywordMethods": [
         {
           "name": "setWebDriverCapabilities",
-          "parameters": [],
-          "javadoc": "/**\n\t * Set web driver capabilities before start of session\n\t * @return web driver desired capabilities for current session\n\t */"
+          "parameters": []
         },
         {
           "name": "startWebDriver",
-          "parameters": [],
-          "javadoc": "/**\n\t * Set web driver capabilities and start a driver\n\t * @return web driver\n\t */"
+          "parameters": []
         },
         {
           "name": "getWebDriverInstance",
-          "parameters": [],
-          "javadoc": "/**\n\t * Get mobile driver for current session\n\t * @return mobile driver for current session\n\t */"
+          "parameters": []
         },
         {
           "name": "stopWebDriver",
-          "parameters": [],
-          "javadoc": "/**\n\t * Stop the current mobile driver session\n\t */"
+          "parameters": []
         },
         {
           "name": "setAndroidCapabilities",
-          "parameters": [],
-          "javadoc": "/**\n\t * Set mobile driver capabilities before start of session\n\t */"
+          "parameters": []
         },
         {
           "name": "getMobileDriver",
-          "parameters": [],
-          "javadoc": "/**\n\t * Get mobile driver for current session\n\t * @return mobile driver for current session\n\t */"
+          "parameters": []
         },
         {
           "name": "startAppDriver",
@@ -50,16 +44,14 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\n\t * Start mobile driver \n\t * Accepts the custom Id of the app uploaded in Lambda Test\n\t */"
+          ]
         },
         {
           "name": "stopAppDriver",
-          "parameters": [],
-          "javadoc": "/**\n\t * Stop the current mobile driver session\n\t */"
+          "parameters": []
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

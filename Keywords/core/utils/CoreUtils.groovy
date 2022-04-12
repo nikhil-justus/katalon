@@ -1,4 +1,4 @@
-package core
+package core.utils
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.testdata.TestData

@@ -11,8 +11,8 @@ import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import constants.FileRouteConstants
-import constants.RemoteConstants
+import core.constants.FileRouteConstants
+import core.constants.RemoteConstants
 
 
 class GetDriverFromCore {

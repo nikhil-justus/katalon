@@ -1,4 +1,4 @@
-package constants
+package core.constants
 
 public class RemoteConstants {
 

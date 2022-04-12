@@ -2,3 +2,5 @@
 /app/
 /constants/
 /core/
+/database/
+/utils/

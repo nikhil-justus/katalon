@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "AADCEC367ECFB0D5270D563EF2098359",
+  "keywordClasses": [
+    {
+      "name": "core.constants.AppConstants",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

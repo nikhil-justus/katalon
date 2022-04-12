@@ -1,0 +1,51 @@
+{
+  "keywordFileContentHash": "B0C31A443A2C59E727B3BB08932D8A9D",
+  "keywordClasses": [
+    {
+      "name": "core.database.Database",
+      "keywordMethods": [
+        {
+          "name": "getQuery",
+          "parameters": [
+            {
+              "name": "query",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "fetchDB",
+          "parameters": [
+            {
+              "name": "data",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testdata.DBData",
+                "unresolvedClassName": "DBData",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "mokamDBConnection",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}
