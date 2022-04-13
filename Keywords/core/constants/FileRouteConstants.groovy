@@ -10,6 +10,8 @@ public class FileRouteConstants {
 
 	public static final String TEST_LISTENERS_PATH = "Test Listeners/"
 
+	public static final String TEST_CASES_PATH = "Test Cases/"
+
 	public static final String REPORTS_PATH = "Reports/"
 
 	public static final String OBJECT_REPOSITORY_PATH = "Object Repository/"
@@ -21,6 +23,8 @@ public class FileRouteConstants {
 	/*----------------TEST SUITE MASTER FILES----------------*/
 
 	public static final String TEST_SUITE_MASTER_FILES_PATH = TEST_FILES_PATH + "TestSuiteMasterFiles/"
+
+	public static final String TEST_CASE_SLAVE_FILES_PATH = TEST_FILES_PATH + "TestCaseSlaveFiles/"
 
 	public static final String MOKAM_TEST_SUITE_MASTER_FILES_PATH = TEST_SUITE_MASTER_FILES_PATH + "mokam/"
 

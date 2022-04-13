@@ -20,7 +20,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Parse json file and return as a json object for validation \n\t * @param json file path\n\t * @return json object\n\t */"
         },
         {
           "name": "parseResponseToMap",
@@ -38,10 +39,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Parse the json response and return as a map of the response\n\t * @param ResponseObject from API call\n\t * @return HashMap\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

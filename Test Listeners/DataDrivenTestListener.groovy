@@ -21,7 +21,7 @@ class DataDrivenTestListener {
 
 		if (testCaseContext.getTestCaseId() == (testCaseId)) {
 			if (map.Execution == 'N') {
-				println "The test case" + testCaseId + "has been skipped"
+				println "The test case" + testCaseId + " has been skipped"
 				testCaseContext.skipThisTestCase()
 			}
 			CustomKeywords.'core.utils.Helper.addGlobalVariable'('testDataSet', map.TestData)

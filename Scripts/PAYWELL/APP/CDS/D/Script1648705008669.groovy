@@ -4,7 +4,11 @@ import internal.GlobalVariable
 
 println "TestCase D is being called"
 
-ArrayList<HashMap<String, Object>> hash = CustomKeywords.'database.Database.getQuery'('select * from shopup_cmt.products order by id desc limit 100')
+ArrayList<HashMap<String, Object>> arr =  CustomKeywords.'core.utils.Helper.getSlaveFileData'()
+
+println arr
+
+ArrayList<HashMap<String, Object>> hash = CustomKeywords.'core.database.Database.getQuery'('select id from shopup_cmt.products order by id desc limit 100')
 
 println hash
 

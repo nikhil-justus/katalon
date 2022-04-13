@@ -7,7 +7,7 @@ import core.constants.FileRouteConstants
 import internal.GlobalVariable
 
 
-public class Helper {
+public class Helper extends FileUtils{
 	@Keyword
 	void addGlobalVariable(String name, def value) {
 		GroovyShell shell = new GroovyShell()
@@ -16,9 +16,21 @@ public class Helper {
 		mc.'static'."$getterName" = { -> return value }
 		mc.'static'."$name" = value
 	}
-	
+
 	@Keyword
 	def getMasterFilePath() {
 		return GlobalVariable.currentTestSuiteId.replace(FileRouteConstants.TEST_SUITES_PATH, '/' + FileRouteConstants.TEST_SUITE_MASTER_FILES_PATH) + FileConstants.XLSX_FILE_FORMAT
 	}
+
+	@Keyword
+	def getSlaveFilePath() {
+		return GlobalVariable.currentTestCaseId.replace(FileRouteConstants.TEST_CASES_PATH, '/' + FileRouteConstants.TEST_CASE_SLAVE_FILES_PATH) + FileConstants.XLSX_FILE_FORMAT
+	}
+
+	@Keyword
+	def getSlaveFileData() {
+		String path = getSlaveFilePath()
+		return readExcelWithEachRowAsList(path, GlobalVariable.testDataSet)
+	}
 }
+

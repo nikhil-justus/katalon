@@ -36,7 +36,7 @@ options.header =
 "import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords\n" + 
 "import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory\n" + 
 "import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords\n" + 
-"import internal.GlobalVariable as GlobalVariable\n" + 
+"import internal.GlobalVariable\n" + 
 "import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI\n" + 
 "import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile\n" + 
 "import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS\n" +

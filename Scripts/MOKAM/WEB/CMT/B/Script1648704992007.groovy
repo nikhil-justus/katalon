@@ -7,5 +7,9 @@ import internal.GlobalVariable
 
 println('TestCase B is being called')
 
-//CustomKeywords.'app.cds.LoginPage.inputLoginNumber'('1638300361')
+ArrayList<HashMap<String, Object>> arr =  CustomKeywords.'core.utils.Helper.getSlaveFileData'()
+
+println arr
+
+CustomKeywords.'app.cds.LoginPage.inputLoginNumber'('1638300361')
 

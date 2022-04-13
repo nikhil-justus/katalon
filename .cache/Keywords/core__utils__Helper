@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "DB22691A2AC80A66FCB4136D5B3D9CF8",
+  "keywordFileContentHash": "A6C395180C090196F59708547338C428",
   "keywordClasses": [
     {
       "name": "core.utils.Helper",
@@ -38,6 +38,16 @@
         },
         {
           "name": "getMasterFilePath",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSlaveFilePath",
+          "parameters": [],
+          "javadoc": ""
+        },
+        {
+          "name": "getSlaveFileData",
           "parameters": [],
           "javadoc": ""
         }

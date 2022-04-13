@@ -33,10 +33,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\n\t * Read excel file\n\t * @param path Excel File Path\n\t * @param sheetName excel sheet for usage\n\t * @return HashMap [String,List\u003cObject\u003e] with each row as List\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
