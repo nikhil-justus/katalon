@@ -79,14 +79,12 @@ class GetDriverFromCore {
 	 * Set mobile driver capabilities before start of session
 	 */
 	@Keyword
-	def setAndroidCapabilities() {
+	def setAndroidCapabilities(String appId) {
 		DesiredCapabilities desiredCapabilities = DesiredCapabilities.android()
 		desiredCapabilities.setCapability(RemoteConstants.VISUAL_KEY, true)
 		desiredCapabilities.setCapability(RemoteConstants.IS_REAL_MOBILE_KEY, true)
 		desiredCapabilities.setCapability(RemoteConstants.PLATFORM_VERSION_KEY, '10')
 		desiredCapabilities.setCapability(RemoteConstants.PLATFORM_NAME_KEY, RemoteConstants.ANDROID_PLATFORM_NAME)
-		desiredCapabilities.setCapability(RemoteConstants.BUILD_KEY, 'CDSApp')
-		desiredCapabilities.setCapability(RemoteConstants.NAME_KEY, 'CDSAppRun')
 		desiredCapabilities.setCapability(RemoteConstants.VIDEO_KEY, true)
 		desiredCapabilities.setCapability(RemoteConstants.NETWORK_KEY, true)
 		desiredCapabilities.setCapability(RemoteConstants.CONSOLE_KEY, true)
@@ -94,6 +92,9 @@ class GetDriverFromCore {
 		desiredCapabilities.setCapability(RemoteConstants.APP_WAIT_ACTIVITY_KEY, '*')
 		desiredCapabilities.setCapability(RemoteConstants.USER_KEY, RemoteConstants.LAMBDA_TEST_USER_NAME)
 		desiredCapabilities.setCapability(RemoteConstants.ACCESS_KEY_KEY, RemoteConstants.LAMBDA_TEST_ACCESS_KEY)
+		desiredCapabilities.setCapability(RemoteConstants.BUILD_KEY, appId)
+		desiredCapabilities.setCapability(RemoteConstants.NAME_KEY, appId)
+
 		return desiredCapabilities
 	}
 
@@ -112,7 +113,7 @@ class GetDriverFromCore {
 	 */
 	@Keyword
 	def startAppDriver(String appId) {
-		MobileDriverFactory.startRemoteMobileDriver(RemoteConstants.LAMBDA_TEST_REMOTE_URL, setAndroidCapabilities(), MobileDriverType.ANDROID_DRIVER, appId)
+		MobileDriverFactory.startRemoteMobileDriver(RemoteConstants.LAMBDA_TEST_REMOTE_URL, setAndroidCapabilities(appId), MobileDriverType.ANDROID_DRIVER, appId)
 		println "Appium Remote Service has been started"
 	}
 

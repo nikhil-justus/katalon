@@ -105,6 +105,20 @@ def static "core.utils.CoreUtils.parseResponseToMap"(
         	response)
 }
 
+
+def static "core.WebBaseClass.xpathSetter"(
+    	String path	) {
+    (new core.WebBaseClass()).xpathSetter(
+        	path)
+}
+
+
+def static "core.WebBaseClass.navigateToURL"(
+    	String url	) {
+    (new core.WebBaseClass()).navigateToURL(
+        	url)
+}
+
  /**
 	 * Read excel file
 	 * @param path Excel File Path
@@ -153,8 +167,10 @@ def static "core.GetDriverFromCore.stopWebDriver"() {
  /**
 	 * Set mobile driver capabilities before start of session
 	 */ 
-def static "core.GetDriverFromCore.setAndroidCapabilities"() {
-    (new core.GetDriverFromCore()).setAndroidCapabilities()
+def static "core.GetDriverFromCore.setAndroidCapabilities"(
+    	String appId	) {
+    (new core.GetDriverFromCore()).setAndroidCapabilities(
+        	appId)
 }
 
  /**
@@ -252,17 +268,17 @@ def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkTestObject"(
 }
 
 
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
+}
+
+
 def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpen"(
     	String testName	
      , 	RectangleSize viewportSize	) {
     (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesOpen(
         	testName
          , 	viewportSize)
-}
-
-
-def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
-    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
 }
 
 

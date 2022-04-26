@@ -1,9 +1,48 @@
 {
-  "keywordFileContentHash": "C515154D6122E5D2C0B6F4FDD06AB44F",
+  "keywordFileContentHash": "48212B6C404385C6BDFD9326DDC984D7",
   "keywordClasses": [
     {
       "name": "core.WebBaseClass",
-      "keywordMethods": []
+      "keywordMethods": [
+        {
+          "name": "xpathSetter",
+          "parameters": [
+            {
+              "name": "path",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "navigateToURL",
+          "parameters": [
+            {
+              "name": "url",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
     }
   ],
   "javadocParsed": true

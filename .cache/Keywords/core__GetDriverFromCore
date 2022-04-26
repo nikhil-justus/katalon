@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "368FB491C2BD13EE12FD1D86D5B6BAC3",
+  "keywordFileContentHash": "2B39F49C1681D3FF1DEA6A28752397D0",
   "keywordClasses": [
     {
       "name": "core.GetDriverFromCore",
@@ -26,7 +26,21 @@
         },
         {
           "name": "setAndroidCapabilities",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "appId",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
           "javadoc": "/**\n\t * Set mobile driver capabilities before start of session\n\t */"
         },
         {
