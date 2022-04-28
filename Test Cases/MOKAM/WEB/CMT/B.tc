@@ -3,6 +3,16 @@
    <description></description>
    <name>B</name>
    <tag></tag>
+   <integratedEntity>
+      <productName>com.aiotests.plugin.AIOTestsPlugin</productName>
+      <properties>
+         <entry>
+            <key>aioTests.testcase.id</key>
+            <value>MP-TC-26</value>
+         </entry>
+      </properties>
+      <type>TESTCASE</type>
+   </integratedEntity>
    <comment></comment>
    <testCaseGuid>aeffcea5-c9af-4dc1-83bd-c7235e093e4f</testCaseGuid>
 </TestCaseEntity>

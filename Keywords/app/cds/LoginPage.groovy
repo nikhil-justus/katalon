@@ -8,7 +8,6 @@ import core.AppBaseClass
 import internal.GlobalVariable
 
 
-
 public class LoginPage extends AppBaseClass{
 
 

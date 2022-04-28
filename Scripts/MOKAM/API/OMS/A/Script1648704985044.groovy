@@ -15,7 +15,7 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import internal.GlobalVariable as GlobalVariable
 
-CustomKeywords.'core.utils.Helper.addGlobalVariable'('testDataSet', 'Valid')
+//CustomKeywords.'core.utils.Helper.addGlobalVariable'('testDataSet', 'Valid')
 
 HashMap<String, Object> data = CustomKeywords.'core.utils.Helper.getSlaveFileData'()
 //get slave file data as hashMap [testData:[phone:1638300361, otp:6666], testCase:[TestCase:kdhiudgyidg, BusinessFlow:ygteuygtuygs, TestCaseId:15432]]
