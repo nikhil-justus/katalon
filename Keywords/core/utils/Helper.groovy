@@ -30,9 +30,11 @@ public class Helper extends FileUtils{
 	@Keyword
 	def getSlaveFileData() {
 		String path = getSlaveFilePath()
+		println path
 		HashMap<String, Object> hashMap = new HashMap()
 		hashMap.put('testData', readExcelWithEachRowAsList(path, GlobalVariable.testDataSet)[0])
 		hashMap.put('testCase', readExcelWithEachRowAsList(path, FileConstants.DEFAULT_EXCEL_SHEET))
+		println hashMap
 		return hashMap
 	}
 }

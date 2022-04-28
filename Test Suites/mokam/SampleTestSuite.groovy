@@ -14,8 +14,8 @@ import core.constants.AppConstants
  */
 @SetUp(skipped = false) // Please change skipped to be false to activate this method.
 def setUp() {
-	CustomKeywords.'core.GetDriverFromCore.startWebDriver'()
-	CustomKeywords.'core.GetDriverFromCore.startAppDriver'(AppConstants.CDS_APP_ID)
+//	CustomKeywords.'core.GetDriverFromCore.startWebDriver'()
+//	CustomKeywords.'core.GetDriverFromCore.startAppDriver'(AppConstants.CDS_APP_ID)
 }
 
 /**
@@ -23,8 +23,8 @@ def setUp() {
  */
 @TearDown(skipped = false) // Please change skipped to be false to activate this method.
 def tearDown() {
-	CustomKeywords.'core.GetDriverFromCore.stopAppDriver'()
-	CustomKeywords.'core.GetDriverFromCore.stopWebDriver'()
+//	CustomKeywords.'core.GetDriverFromCore.stopAppDriver'()
+//	CustomKeywords.'core.GetDriverFromCore.stopWebDriver'()
 }
 
 /**

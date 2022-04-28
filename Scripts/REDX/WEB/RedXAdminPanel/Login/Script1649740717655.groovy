@@ -21,10 +21,10 @@ CustomKeywords.'core.GetDriverFromCore.startWebDriver'()
 
 WebUI.navigateToUrl('https://redxadmin.shopups1.xyz/')
 
-WebUI.setText(findTestObject('Web/RedX/RedXAdminPanel/Login/phoneInput'), phone)
+WebUI.setText(findTestObject('WEB/REDX/RedXAdminPanel/Login/phoneInput'), phone)
 
-WebUI.click(findTestObject('Web/RedX/RedXAdminPanel/Login/getOtpButton'))
+WebUI.click(findTestObject('WEB/REDX/RedXAdminPanel/Login/getOtpButton'))
 
-WebUI.setText(findTestObject('Web/RedX/RedXAdminPanel/Login/otpInput'), otp)
+WebUI.setText(findTestObject('WEB/REDX/RedXAdminPanel/Login/otpInput'), otp)
 
-WebUI.click(findTestObject('Web/RedX/RedXAdminPanel/Login/loginButton'))
+WebUI.click(findTestObject('WEB/REDX/RedXAdminPanel/Login/loginButton'))

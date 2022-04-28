@@ -19,15 +19,15 @@ import org.openqa.selenium.Keys as Keys
 
 //Mobile.startApplication('/Users/ramaditya/Downloads/app-stagingrelease.apk', true)
 
-Mobile.setText(findTestObject('Object Repository/App/SOHO/android.widget.EditText -'), '01717520403', 0)
+Mobile.setText(findTestObject('Object Repository/APP/REDX/SOHO/android.widget.EditText -'), '01717520403', 0)
 
-Mobile.tap(findTestObject('Object Repository/App/SOHO/android.widget.Button'), 0)
+Mobile.tap(findTestObject('Object Repository/APP/REDX/SOHO/android.widget.Button'), 0)
 
-Mobile.setText(findTestObject('Object Repository/App/SOHO/android.widget.EditText'), '6666', 0)
+Mobile.setText(findTestObject('Object Repository/APP/REDX/SOHO/android.widget.EditText'), '6666', 0)
 
-Mobile.tap(findTestObject('Object Repository/App/SOHO/android.widget.EditText - 880-1717-520403'), 0)
+Mobile.tap(findTestObject('Object Repository/APP/REDX/SOHO/android.widget.EditText - 880-1717-520403'), 0)
 
-Mobile.tap(findTestObject('Object Repository/App/SOHO/android.widget.Button (1)'), 0)
+Mobile.tap(findTestObject('Object Repository/APP/REDX/SOHO/android.widget.Button (1)'), 0)
 
 Mobile.closeApplication()
 

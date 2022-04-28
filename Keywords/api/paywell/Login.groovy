@@ -14,12 +14,12 @@ public class Login {
 
 	@Keyword
 	def loginInit(String phone) {
-		println WS.sendRequest(findTestObject('API/cds/Login/LoginInit', [('phone') : phone]))
+		println WS.sendRequest(findTestObject('API/PAYWELL/CDS/Login/LoginInit', [('phone') : phone]))
 	}
 
 	@Keyword
 	def login(String phone, String otp) {
-		ResponseObject response =  WS.sendRequest(findTestObject('API/cds/Login/Login', [('phone') : phone, ('otp') : otp]))
+		ResponseObject response =  WS.sendRequest(findTestObject('API/PAYWELL/CDS/Login/Login', [('phone') : phone, ('otp') : otp]))
 		println response
 		String cookie = response.headerFields.get("Set-Cookie").get(0).split(";")[0]
 		GlobalVariable.PAYWELL_COOKIE = cookie

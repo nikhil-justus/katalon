@@ -3,6 +3,28 @@
    <description></description>
    <name>SampleTestSuite</name>
    <tag></tag>
+   <integratedEntity>
+      <productName>com.aiotests.plugin.AIOTestsPlugin</productName>
+      <properties>
+         <entry>
+            <key>aioTests.testsuite.projectKey</key>
+            <value>MP</value>
+         </entry>
+         <entry>
+            <key>aioTests.testsuite.isNewCycle</key>
+            <value>true</value>
+         </entry>
+         <entry>
+            <key>aioTests.testsuite.cycleKey</key>
+            <value>SampleTestSuite Run</value>
+         </entry>
+         <entry>
+            <key>aioTests.testsuite.createNewRun</key>
+            <value>true</value>
+         </entry>
+      </properties>
+      <type>TESTCASE</type>
+   </integratedEntity>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
